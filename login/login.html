@@ -4,79 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
-
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            font-family: sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0b3d1b 0%, #154734 50%, #1d4b4f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-        }
-
-        .login-name span {
-            color: #ffffff;
-            position: absolute;
-            top: 25px;
-            left: 80px;
-        }
-
-        .login-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 300px;
-        }
-
-        .login-box h1 {
-            margin-bottom: 30px;
-            color: #154734;
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .login-box button {
-            width: 100%;
-            padding: 10px;
-            background: #154734;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .login-box button:hover {
-            background: #0b3d1b;
-        }
-
-        .login-box a {
-            font-size: 12px;
-            color: #777;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
@@ -84,7 +12,7 @@
     <div class="login-name">
         <span>Time and Attendance System<br>CDG Group</span>
     </div>
-    
+
     <div class="login-box">
         <h1>Form Login</h1>
         <input type="text" placeholder="Email/Username">
@@ -95,5 +23,4 @@
     </div>
 
 </body>
-
 </html>
