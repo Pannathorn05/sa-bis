@@ -1,33 +1,214 @@
 <!DOCTYPE html>
 <html lang="th">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Time and Attendance System</title>
-    <link rel="stylesheet" href="home.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body class="bg-light">
 
-    <div class="header">
-        <div class="logo">
-            <img src="logo.png" alt="logo CDG" class="logo">
-            <div class="logo-text">
-                <strong>ระบบบันทึกเวลา และการเข้าทำงาน</strong>
-                <span>CDG Group</span>
-            </div>
-        </div>
-
-        <div class="user-info">
-            <img src=" -2.jpg" alt="User">
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-3 mb-4">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex align-items-center">
+            <img src="logo.png" alt="logo CDG" class="img-fluid me-3" style="height: 50px;" />
             <div>
-                <strong>นางสาว หญิง รัตนะ</strong>
-                <span>พนักงาน</span>
+              <h5 class="mb-0">ระบบบันทึกเวลา และการเข้าทำงาน</h5>
+              <small class="text-muted">CDG Group</small>
             </div>
-            <span class="arrow">▼</span>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <img src="-2.jpg" alt="User" class="rounded-circle me-2" style="height: 40px; width: 40px; object-fit: cover;" />
+            <div class="text-end">
+              <strong>นางสาว หญิง รัตนะ</strong><br />
+              <span class="text-muted">พนักงาน</span>
+            </div>
+            <span class="ms-2">▼</span>
+          </div>
         </div>
-    </div>
-</body>
+      </div>
+    </header>
 
-</html>
+    <!-- Main Layout -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar py-4 border-end">
+          <div class="position-sticky px-3">
+            <h5 class="text-center mb-4">เมนู</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a class="nav-link active" href="#">บันทึกการทำงาน</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a class="nav-link" href="#">ดูประวัติ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ออกจากระบบ</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <h2 class="mb-4">บันทึกการเข้าทำงาน</h2>
+
+          <!-- Card -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form id="workForm">
+                <div class="mb-3">
+                  <label for="employeeId" class="form-label">รหัสพนักงาน</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="employeeId"
+                    placeholder="กรอกรหัสพนักงาน"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="lastName" class="form-label">ชื่อ-นามสกุล</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="ชื่อ-นามสกุล"
+                    required
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="date" class="form-label">วันที่</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="date"
+                      readonly
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="time" class="form-label">เวลา</label>
+                    <input
+                      type="time"
+                      class="form-control"
+                      id="time"
+                      readonly
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="location" class="form-label">สถานที่ทำงาน</label>
+                  <select class="form-select" id="location" required>
+                    <option value="" selected disabled>-- เลือกสถานที่ทำงาน --</option>
+                    <option value="place1">ที่บริษัท</option>
+                    <option value="place2">นอกสถานที่</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">บันทึก</button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">ยืนยันการบันทึก</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>รหัสพนักงาน:</strong> <span id="modalEmployeeId"></span></p>
+            <p><strong>ชื่อ-นามสกุล:</strong> <span id="modalLastName"></span></p>
+            <p><strong>วันที่:</strong> <span id="modalDate"></span></p>
+            <p><strong>เวลา:</strong> <span id="modalTime"></span></p>
+            <p><strong>สถานที่ทำงาน:</strong> <span id="modalLocation"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-primary" id="confirmSaveBtn">ยืนยันบันทึก</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+  <script>
+  // ตั้งค่าวันที่และเวลาเป็นปัจจุบัน
+  function setCurrentDateTime() {
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    dateInput.value = `${year}-${month}-${day}`;
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    timeInput.value = `${hours}:${minutes}`;
+  }
+
+  window.onload = () => {
+    setCurrentDateTime();
+
+    const workForm = document.getElementById('workForm');
+    const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+    workForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const employeeId = document.getElementById('employeeId').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const locationSelect = document.getElementById('location');
+      const locationText = locationSelect.options[locationSelect.selectedIndex].text;
+
+      document.getElementById('modalEmployeeId').textContent = employeeId;
+      document.getElementById('modalLastName').textContent = lastName;
+      document.getElementById('modalDate').textContent = date;
+      document.getElementById('modalTime').textContent = time;
+      document.getElementById('modalLocation').textContent = locationText;
+
+      confirmModal.show();
+    });
+
+    // ✅ ยืนยันบันทึก
+    document.getElementById('confirmSaveBtn').addEventListener('click', function() {
+      confirmModal.hide();
+
+      // ✅ แสดง Toast แจ้งเตือนว่าบันทึกสำเร็จ
+      const toastEl = document.getElementById('successToast');
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+
+      // รีเซ็ตฟอร์มหรือจะไม่รีเซ็ตก็ได้
+      // document.getElementById('workForm').reset();
+      setCurrentDateTime();
+    });
+  }
+</script>

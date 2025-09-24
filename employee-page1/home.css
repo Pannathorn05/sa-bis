@@ -1,68 +1,114 @@
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ffffff;
-        padding: 10px 20px;
-        border-bottom: 1px solid #ddd;
-    }
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
 
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .logo img {
-        width: 40px;
-        height: 40px;
-        border-radius: 5px;
-    }
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
 
-    .logo-text {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.2;
-    }
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
 
-    .logo-text strong {
-        font-size: 18px;
-    }
+.logo-text strong {
+    font-size: 18px;
+    color: #000;
+}
 
-    .logo-text span {
-        font-size: 14px;
-        color: #444;
-    }
+.logo-text span {
+    font-size: 14px;
+    color: #444;
+}
 
-    /* ---------- User ---------- */
-    .user-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-    }
+/* ===== USER INFO ===== */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
 
-    .user-info img {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-    }
+.user-info img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-    .user-info div {
-        display: flex;
-        flex-direction: column;
-        font-size: 14px;
-    }
+.user-info div {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
 
-    .user-info div strong {
-        font-size: 14px;
-    }
+.user-info div strong {
+    font-size: 14px;
+    color: #000;
+}
 
-    .user-info div span {
-        font-size: 12px;
-        color: #444;
-    }
+.user-info div span {
+    font-size: 12px;
+    color: #444;
+}
 
-    .arrow {
-        font-size: 14px;
-    }
+.arrow {
+    font-size: 14px;
+    color: #444;
+}
+
+/* ===== SIDEBAR MENU ===== */
+#nav-bg {
+    background-color: #154734;
+    min-height: 100vh;
+    color: #fff;
+}
+
+#nav-bg .nav-link {
+    color: #ffffff;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+#nav-bg .nav-link.active,
+#nav-bg .nav-link:hover {
+    background-color: #106B46;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* ===== CARD FORM ===== */
+.card {
+    border-radius: 8px;
+}
+
+.card-body label {
+    font-weight: 500;
+}
+
+/* ===== BUTTON ===== */
+.btn-primary {
+    background-color: #154734;
+    border-color: #154734;
+}
+
+.btn-primary:hover {
+    background-color: #106B46;
+    border-color: #106B46;
+}
