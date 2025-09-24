@@ -1,130 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time and Attendance System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #fff;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ccc;
-        }
-        header h1 {
-            font-size: 18px;
-            margin: 0;
-        }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            width: 250px;
-            background-color: #1c3b2f;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            min-height: 100vh;
-        }
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-bottom: 10px;
-            object-fit: cover;
-        }
-        .profile-info {
-            text-align: center;
-            font-size: 14px;
-        }
-        .profile-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .main {
-            flex: 1;
-            padding: 40px;
-            text-align: center;
-        }
-        .main h2 {
-            margin-bottom: 40px;
-        }
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(2, 180px);
-            justify-content: center;
-            gap: 30px;
-        }
-        .menu-item {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-        }
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-        }
-        .menu-item img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
-    <header>
-        <h1>CDG Time and Attendance System</h1>
-        <div>
-            <span>Tue. 10 May 2025 | 10:23 AM</span> |
-            <a href="#" style="color:black; text-decoration:none;">Log out</a>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="sidebar">
-            <img src="https://via.placeholder.com/120" class="profile-pic" alt="Profile">
-            <div class="profile-info">
-                <p><strong>Mrs. Ying Rattana</strong></p>
-                <p><a href="mailto:rattana_a@gmail.com">rattana_a@gmail.com</a></p>
-                <p>developer</p>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="logo CDG" class="logo">
+            <div class="logo-text">
+                <strong>ระบบบันทึกเวลา และการเข้าทำงาน</strong>
+                <span>CDG Group</span>
             </div>
         </div>
 
-        <div class="main">
-            <h2>Welcome, Mrs. Ying Rattana</h2>
-            <div class="menu">
-                <div class="menu-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="time">
-                    <p>Time In / Time Out</p>
-                </div>
-                <div class="menu-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="leave">
-                    <p>My Leave</p>
-                </div>
-                <div class="menu-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="record">
-                    <p>Attendance Record</p>
-                </div>
-                <div class="menu-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="report">
-                    <p>Reports (Summary)</p>
-                </div>
+        <div class="user-info">
+            <img src=" -2.jpg" alt="User">
+            <div>
+                <strong>นางสาว หญิง รัตนะ</strong>
+                <span>พนักงาน</span>
             </div>
+            <span class="arrow">▼</span>
         </div>
     </div>
 </body>
+
 </html>
