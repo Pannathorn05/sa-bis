@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ประวัติการเข้า – ออกงาน | Time and Attendance System</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+
+<body>
+    <body>
+    <header>
+        <div class="brand">
+            <img src="/page/picture/logo.png" alt="logo CDG" class="img-fluid me-3" />
+            <div>
+                <h1>ระบบบันทึกเวลา และการเข้าทำงาน</h1>
+                <span>CDG Group</span>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="profile-info">
+                <strong>นางสาวหญิง รัตนะ</strong>
+                <span>พนักงาน</span>
+            </div>
+            <img src="/page/picture/profile.jpg" alt="profile">
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <a href="/page/page-home/home.html" class="menu-item">หน้าหลัก</a>
+            <a href="/page/page-checkin/checkin.html" class="menu-item">บันทึกเข้า – ออกงาน</a>
+            <a href="/page/page-history/history.html" class="menu-item active">ประวัติการเข้า – ออกงาน</a>
+            <a href="/page/page-login/login.html" class="menu-item logout">ออกจากระบบ</a>
+        </aside>
+
+        <div class="content">
+            <div class="container">
+                <h2>ประวัติการเข้า – ออกงาน</h2>
+
+                <!-- การ์ดสรุป -->
+                <div class="cards-row">
+                    <div class="card small-card">
+                        <div class="title">วันทำงาน</div>
+                        <div class="value">20</div>
+                    </div>
+                    <div class="card small-card">
+                        <div class="title">สาย</div>
+                        <div class="value">2</div>
+                    </div>
+                    <div class="card small-card">
+                        <div class="title">ขาด</div>
+                        <div class="value">0</div>
+                    </div>
+                    <div class="card small-card">
+                        <div class="title">ลา</div>
+                        <div class="value">3</div>
+                    </div>
+                    <div class="card small-card">
+                        <div class="title">ชั่วโมงรวม</div>
+                        <div class="value">160</div>
+                    </div>
+                </div>
+
+                <!-- ค้นหาและกรอง -->
+                <div class="card filter-card">
+                    <label for="search">ค้นหา :</label>
+                    <input type="text" id="search" placeholder="เช่น วันที่ หรือหมายเหตุ...">
+                    <label>จาก :</label>
+                    <input type="date" id="from">
+                    <label>ถึง :</label>
+                    <input type="date" id="to">
+                    <button class="btn-filter">กรอง</button>
+                </div>
+
+                <!-- ตารางประวัติ -->
+                <div class="card table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>วันที่</th>
+                                <th>เข้า</th>
+                                <th>ออก</th>
+                                <th>ชั่วโมง</th>
+                                <th>หมายเหตุ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>24/09/2025</td>
+                                <td>08:05</td>
+                                <td>17:15</td>
+                                <td>9.0</td>
+                                <td>ปกติ</td>
+                            </tr>
+                            <tr>
+                                <td>23/09/2025</td>
+                                <td>08:30</td>
+                                <td>17:00</td>
+                                <td>8.5</td>
+                                <td>สาย</td>
+                            </tr>
+                            <tr>
+                                <td>22/09/2025</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>ขาด</td>
+                            </tr>
+                            <tr>
+                                <td>21/09/2025</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>ลา</td>
+                            </tr>
+                            <tr>
+                                <td>20/09/2025</td>
+                                <td>08:00</td>
+                                <td>16:30</td>
+                                <td>8.5</td>
+                                <td>ปกติ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button>&lt;</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

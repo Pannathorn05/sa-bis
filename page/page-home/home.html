@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Time and Attendance System</title>
+    <title>หน้าหลัก | Time and Attendance System</title>
     <link rel="stylesheet" href="home.css">
 </head>
 
@@ -27,16 +27,90 @@
     </header>
 
     <main>
+
         <aside class="sidebar">
-            <a href="#" class="menu-item active">หน้าหลัก</a>
+            <a href="/page/page-home/home.html" class="menu-item">หน้าหลัก</a>
             <a href="/page/page-checkin/checkin.html" class="menu-item">บันทึกเข้า – ออกงาน</a>
-            <a href="history.html" class="menu-item">ประวัติการเข้า – ออกงาน</a>
+            <a href="/page/page-history/history.html" class="menu-item">ประวัติการเข้า – ออกงาน</a>
             <a href="/page/page-login/login.html" class="menu-item logout">ออกจากระบบ</a>
         </aside>
+        <script>
+            // ทำให้ลิงก์ของหน้าปัจจุบัน active อัตโนมัติ
+            document.querySelectorAll(".menu-item").forEach(link => {
+                if (window.location.pathname.includes(link.getAttribute("href")) &&
+                    !link.classList.contains("logout")) {
+                    link.classList.add("active");
+                }
+            });
+        </script>
+
+        <!-- Content -->
         <div class="content">
-            <h2>บันทึกเข้างาน</h2>
+            <div class="container">
+                <h2>ยินดีต้อนรับ นางสาวหญิง รัตนะ</h2>
+
+                <!-- การ์ดแสดงเวลาปัจจุบัน -->
+                <div class="card big-card">
+                    <div class="title">เวลาปัจจุบัน</div>
+                    <div class="time" id="clock">-- : -- : --</div>
+                    <div class="date" id="date">กำลังโหลดวันที่...</div>
+                </div>
+
+                <!-- แถวการ์ดสรุป -->
+                <div class="cards-row">
+                    <div class="card small-card">
+                        <div class="title">สถานะปัจจุบัน</div>
+                        <div class="value">ยังไม่ได้เข้างาน</div>
+                    </div>
+
+                    <div class="card small-card">
+                        <div class="title">เวลาเข้างานวันนี้</div>
+                        <div class="value">09:00</div>
+                    </div>
+
+                    <div class="card small-card">
+                        <div class="title">ชั่วโมงทำงานเดือนนี้</div>
+                        <div class="value">168 ชม.</div>
+                    </div>
+
+                    <div class="card small-card">
+                        <div class="title">ขาด</div>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="card small-card">
+                        <div class="title">ลา</div>
+                        <div class="value">3</div>
+                    </div>
+
+                    <div class="card small-card">
+                        <div class="title">สาย</div>
+                        <div class="value">2</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <script>
+        // อัปเดตเวลาปัจจุบัน
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById("clock").textContent = `${hours} : ${minutes} : ${seconds}`;
+
+            const thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+                "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+            ];
+            const thaiDays = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
+            const dateStr = `วัน${thaiDays[now.getDay()]}ที่ ${now.getDate()} ${thaiMonths[now.getMonth()]} ${now.getFullYear() + 543}`;
+            document.getElementById("date").textContent = dateStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 
 </html>
